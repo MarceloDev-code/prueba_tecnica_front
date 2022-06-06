@@ -1,0 +1,50 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="rut">Rut</label>
+          <input
+            type="text"
+            class="form-control"
+            id="rut"
+            required
+            [(ngModel)]="empleado.rut"
+            name="rut"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            class="form-control"
+            id="nombre"
+            required
+            [(ngModel)]="empleado.nombre"
+            name="nombre"
+          />
+        </div>
+        <div class="form-group">
+            <label for="email">email</label>
+            <input
+              class="form-control"
+              id="email"
+              required
+              [(ngModel)]="empleado.email"
+              name="email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="empresa">empresa</label>
+            <select class="form-control" id="empresa" required [(ngModel)]="empleado.empresa" name="empresa">
+                <option *ngFor="let empresa of empresas" [value]="empresa.rut">{{ empresa.nombre }}</option>
+            />
+            </select>
+            </div>
+
+        <button (click)="saveEmpleado()" class="btn btn-success">Guardar</button>
+      </div>
+      <div *ngIf="submitted">
+        <h4>Guardado satisfactoriamente</h4>
+        <button class="btn btn-success" (click)="newEmpleado()">Agregar otro</button>
+      </div>
+    </div>
+  </div>

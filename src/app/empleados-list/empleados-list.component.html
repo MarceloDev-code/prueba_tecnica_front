@@ -1,0 +1,34 @@
+<div class="list row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4>Empresas</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Rut</th>
+                            <th>Nombre</th>
+                            <th>email</th>
+                            <th>Empresa</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let emplead of empleado">
+                            <td>{{ emplead.rut }}</td>
+                            <td>{{ emplead.nombre }}</td>
+                            <td>{{ emplead.email }}</td>
+                            <td>{{ emplead.empresa }}</td>
+                            <td>
+                                <button class="btn btn-info " >Actualizar</button>
+                                <button class="btn btn-danger" >Eliminar</button>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    

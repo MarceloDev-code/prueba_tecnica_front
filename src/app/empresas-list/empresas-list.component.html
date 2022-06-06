@@ -1,0 +1,35 @@
+<div class="list row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4>Empresas</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Rut</th>
+                            <th>Nombre</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let empresa of empresas">
+                            <td>{{ empresa.rut }}</td>
+                            <td>{{ empresa.nombre }}</td>
+                            <td>{{ empresa.direccion }}</td>
+                            <td>{{ empresa.telefono }}</td>
+                            <td>
+                                <button class="btn btn-warning " (click)="irAListaDeEmpleados(empresa)">Ver empleados</button>
+                                <button class="btn btn-info " >Actualizar</button>
+                                <button class="btn btn-danger" >Eliminar</button>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
